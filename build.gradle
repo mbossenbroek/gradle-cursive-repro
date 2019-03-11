@@ -1,0 +1,21 @@
+buildscript {
+    dependencies {
+        classpath 'com.netflix.nebula:nebula-clojure-plugin:8.0.0'
+    }
+}
+
+plugins {
+    id 'java'
+    id "nebula.clojure" version "8.0.1"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.clojure:clojure:1.8.0'
+}
+
+// make sure java classes are compiled before clojure
+compileClojure.dependsOn compileJava
